@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .campo { @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-500/30; }
+  .campo-error { @apply border-red-500; }
+  .etiqueta { @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-600; }
+  .btn { @apply inline-flex items-center justify-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-1 disabled:opacity-50; }
+  .btn-primario { @apply btn bg-brand-600 text-white hover:bg-brand-700 focus:ring-brand-500; }
+  .btn-sec { @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 focus:ring-slate-400; }
+  .btn-peligro { @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500; }
+}
+
+@keyframes aparecer { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.animar { animation: aparecer 0.2s ease-out; }
+@media (prefers-reduced-motion: reduce) { .animar { animation: none; } }
